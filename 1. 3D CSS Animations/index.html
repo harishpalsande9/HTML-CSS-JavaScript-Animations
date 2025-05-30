@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D CSS Animations - One by One</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .animation-block {
+      background: #222;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+      perspective: 1000px;
+    }
+
+    .box {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      background: linear-gradient(45deg, #00f2fe, #4facfe);
+      border-radius: 10px;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+
+    .label {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #0ff;
+    }
+
+    /* Individual Animation Effects */
+    .rotate-x:hover .box { transform: rotateX(360deg); }
+    .rotate-y:hover .box { transform: rotateY(360deg); }
+    .rotate-z:hover .box { transform: rotateZ(360deg); }
+    .flip:hover .box { transform: rotateY(180deg); }
+    .spin:hover .box { animation: spin 2s infinite linear; }
+    .bounce:hover .box { animation: bounce 1s infinite; }
+    .scale:hover .box { transform: scale3d(1.5, 1.5, 1.5); }
+    .tilt:hover .box { transform: rotateX(30deg) rotateY(30deg); }
+    .swing:hover .box { animation: swing 1.5s infinite alternate; }
+    .slide:hover .box { transform: translateZ(60px); }
+
+    /* Keyframes */
+    @keyframes spin {
+      0% { transform: rotateY(0); }
+      100% { transform: rotateY(360deg); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+    }
+
+    @keyframes swing {
+      0% { transform: rotateY(-25deg); }
+      100% { transform: rotateY(25deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>3D CSS Animations</h1>
+
+  <div class="animation-block rotate-x">
+    <div class="box"></div>
+    <div class="label">Rotate X</div>
+  </div>
+
+  <div class="animation-block rotate-y">
+    <div class="box"></div>
+    <div class="label">Rotate Y</div>
+  </div>
+
+  <div class="animation-block rotate-z">
+    <div class="box"></div>
+    <div class="label">Rotate Z</div>
+  </div>
+
+  <div class="animation-block flip">
+    <div class="box"></div>
+    <div class="label">Flip</div>
+  </div>
+
+  <div class="animation-block spin">
+    <div class="box"></div>
+    <div class="label">Spin</div>
+  </div>
+
+  <div class="animation-block bounce">
+    <div class="box"></div>
+    <div class="label">Bounce</div>
+  </div>
+
+  <div class="animation-block scale">
+    <div class="box"></div>
+    <div class="label">Scale</div>
+  </div>
+
+  <div class="animation-block tilt">
+    <div class="box"></div>
+    <div class="label">Tilt</div>
+  </div>
+
+  <div class="animation-block swing">
+    <div class="box"></div>
+    <div class="label">Swing</div>
+  </div>
+
+  <div class="animation-block slide">
+    <div class="box"></div>
+    <div class="label">Slide Forward (Z-axis)</div>
+  </div>
+
+</body>
+</html>
